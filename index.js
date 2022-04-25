@@ -1,7 +1,40 @@
 /*
-Challenge: 
-1. Take the hard-coded HTML for the Wizard card, bring it 
-   into index.js and then inject it back into its div with 
-   JavaScript.
-2. Do the same for Orc card. 
+CHALLENGE
+1. Convert our consts into two objects called 
+"monster" and "hero".
+2. Update the renderCharacter() function so that it accepts 
+a single object "data" as its parameter instead of five string/numbers, 
+reducing the number of arguments to pass in from five to one.
+3. Update the template now each variable is coming from "data".
+4. Update the function call.
 */
+
+const renderCharacter = (data) => {
+   document.getElementById(data.elementId).innerHTML =
+
+   `<div class="character-card">
+      <h4 class="name"> ${data.name} </h4>
+      <img class="avatar" src="${data.avatar}"/>
+      <p class="health">health: <b> ${data.health} </b></p>
+      <div class="dice-container"><div class="dice"> ${data.diceRoll} </div></div>
+   </div>`;
+};
+
+const hero = {
+	elementId: 'hero',
+	name: 'Wizard',
+	avatar: 'images/wizard.png',
+	health: 60,
+	diceRoll: 6,
+};
+
+const monster = {
+	elementId: 'monster',
+	name: 'Orc',
+	avatar: 'images/orc.png',
+	health: 10,
+	diceRoll: 4,
+};
+
+renderCharacter(hero);
+renderCharacter(monster);
