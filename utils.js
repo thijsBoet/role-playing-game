@@ -7,5 +7,7 @@ const getDicePlaceholderHtml = diceCount =>
 		.map(() => `<div class="placeholder-dice"></div>`)
 		.join('');
 
+const getPercentage = (num, total) => Math.round((num / total) * 100);
 
-export { getDiceRollArray, getDicePlaceholderHtml };
+
+export { getDiceRollArray, getDicePlaceholderHtml, getPercentage };

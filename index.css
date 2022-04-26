@@ -122,6 +122,10 @@ main {
     background:#d1435f;
 }
 
+.health-bar-outer .health-bar-inner.warning {
+    background:#b9b600;
+}
+
 .dice-container {
     width:100%;
     height: 20%;
