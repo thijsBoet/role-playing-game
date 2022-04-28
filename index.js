@@ -18,8 +18,8 @@ function render() {
 
 function attack() {
 	if (!isWaiting) {
-		wizard.getDiceHtml();
-		monster.getDiceHtml();
+		wizard.setDiceHtml();
+		monster.setDiceHtml();
 		wizard.takeDamage(monster.currentDiceScore);
 		monster.takeDamage(wizard.currentDiceScore);
 
@@ -46,8 +46,8 @@ function endGame() {
 		wizard.health === 0 && monster.health === 0
 			? 'No victors - all creatures are dead!'
 			: wizard.health < 0
-			? 'The Wizard is Victorious!'
-			: 'The Monsters are Victorious!';
+				? 'The Monsters are Victorious!'
+				: 'The Wizard is Victorious!';
 
 	const endEmoji =
 		wizard.health === 0 && monster.health === 0
