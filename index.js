@@ -53,8 +53,8 @@ function endGame() {
 		wizard.health === 0 && monster.health === 0
 			? '💀'
 			: wizard.health < 0
-			? '🔮'
-				: '☠️';
+			? '☠️'
+			: '🔮';
 
 	isWaiting = true;
 	setTimeout(() => {
@@ -64,8 +64,18 @@ function endGame() {
 				<h2>Game Over</h2>
 				<h3>${endMessage}</h3>
 				<p class="end-emoji">${endEmoji}</p>
-			</div>`;
+			</div>
+			<section id="actions">
+				<button id="replay">Play Again</button>
+			</section>`;
+		document
+			.getElementById('replay')
+			.addEventListener('click', replay);
 	}, 1500);
+}
+
+function replay() {
+	location.reload();
 }
 
 const wizard = new Character(characterData.hero);
@@ -74,4 +84,5 @@ let monster = getNewMonster();
 document
 	.getElementById('attack-button')
 	.addEventListener('click', () => attack());
+
 render();
